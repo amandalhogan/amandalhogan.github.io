@@ -1,2 +1,2 @@
-# amandalhogan.github.io
-hello!
+# amanda hogan
+hello, welcome to my site!
