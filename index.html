@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Amanda L. Hogan</title>
     <meta name="author" content="Amanda L. Hogan">
     <meta name="description" content="">
-    <meta name="keywords" content="jekyll, academic-website, portfolio-website">
-    
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css">
     <link defer rel="stylesheet" href="assets/css/academicons.min.css">
     <link defer rel="stylesheet" href="assets/css/scholar-icons.css">
-    <link defer rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap">
+    <link defer rel="stylesheet" href="assets/css/jekyll-pygments-themes-github.css">
     <link rel="shortcut icon" href="assets/img/favicon2.png">
-    
+    <link rel="stylesheet" href="assets/css/main.css">
     <script src="assets/js/theme.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute("href")).scrollIntoView({
-                        behavior: "smooth"
-                    });
-                });
-            });
-        });
+        initTheme();
     </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body class="fixed-top-nav">
     <header>
@@ -43,7 +39,7 @@
                 </button>
                 <div class="collapse navbar-collapse text-right" id="navbarNav">
                     <ul class="navbar-nav ml-auto flex-nowrap">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                         <li class="nav-item"><a class="nav-link" href="#cv">CV</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
@@ -58,53 +54,33 @@
                 </div>
             </div>
         </nav>
-        <progress id="progress" value="0"></progress>
     </header>
     
-    <div class="container mt-5" role="main">
-        <section id="about">
-            <h1 class="post-title">Amanda L. Hogan</h1>
-            <div class="profile float-right">
-                <img src="assets/img/prof_pic.jpg" class="img-fluid rounded" alt="Profile Picture">
-            </div>
-            <p>Welcome to my site! I'm Amanda, a scientist, space enthusiast, and avid gardener.</p>
-            <p>Some quick facts:</p>
-            <ul class="fact-list">
-                <li><i class="fa-regular fa-star"></i> Graduated from Rice University in May 2024 with a B.S. in Biosciences.</li>
-                <li><i class="fa-regular fa-star"></i> Currently pursuing a Professional Master's in Space Studies.</li>
-                <li><i class="fa-regular fa-star"></i> Proficient in Python, with experience in Matlab, R, JavaScript, and SQL.</li>
-                <li><i class="fa-regular fa-star"></i> From Los Angeles, currently based in Houston, TX.</li>
-            </ul>
-        </section>
-        
-        <section id="projects">
-            <h2>Projects</h2>
-            <table class="table table-sm table-borderless">
-                <tr>
-                    <th scope="row">Jan 15, 2016</th>
-                    <td>A simple inline announcement.</td>
-                </tr>
-                <tr>
-                    <th scope="row">Nov 07, 2015</th>
-                    <td><a href="news/announcement_2/">A long announcement with details</a></td>
-                </tr>
-            </table>
-        </section>
-        
-        <section id="cv">
-            <h2>CV</h2>
-            <p>Download my CV <a href="assets/pdf/cv.pdf" target="_blank">here</a>.</p>
-        </section>
-        
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-            <p>Socials: <a href="https://scholar.google.com/">Google Scholar</a> | <a href="https://github.com">GitHub</a></p>
-        </section>
-    </div>
+    <section id="about" class="container mt-5" role="main">
+        <h1 class="post-title">Amanda Hogan</h1>
+        <p>Welcome to my site! I'm Amanda, a scientist, space enthusiast, and avid gardener.</p>
+    </section>
+    
+    <section id="projects" class="container mt-5">
+        <h2>Projects</h2>
+        <table class="table table-sm table-borderless">
+            <tr><th scope="row">Jan 15, 2016</th><td>A simple inline announcement</td></tr>
+            <tr><th scope="row">Nov 07, 2015</th><td><a href="#">A long announcement with details</a></td></tr>
+        </table>
+    </section>
+    
+    <section id="cv" class="container mt-5">
+        <h2>CV</h2>
+        <p>Download my CV <a href="assets/cv.pdf" target="_blank">here</a>.</p>
+    </section>
+    
+    <section id="contact" class="container mt-5">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+    </section>
     
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/common.js"></script>
 </body>
 </html>
