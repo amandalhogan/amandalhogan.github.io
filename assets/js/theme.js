@@ -1,121 +1,98 @@
+// Function to toggle between dark and light mode
 let toggleThemeSetting = () => {
-    let e = determineThemeSetting();
-    setThemeSetting("system" == e ? "light" : "light" == e ? "dark" : "system");
+    let currentTheme = localStorage.getItem("theme") || "dark";
+    let newTheme = (currentTheme === "dark") ? "light" : "dark";
+    
+    setThemeSetting(newTheme);
 };
 
-let setThemeSetting = e => {
-    localStorage.setItem("theme", e);
-    document.documentElement.setAttribute("data-theme-setting", e);
+// Function to set and apply the theme
+let setThemeSetting = (theme) => {
+    localStorage.setItem("theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
     applyTheme();
 };
 
+// Function to apply the theme
 let applyTheme = () => {
-    let e = determineComputedTheme();
+    let theme = localStorage.getItem("theme") || "dark";  // Default to dark mode
+
     transTheme();
-    setHighlight(e);
-    setGiscusTheme(e);
-    setSearchTheme(e);
-    "undefined" != typeof mermaid && setMermaidTheme(e);
-    "undefined" != typeof Diff2HtmlUI && setDiff2htmlTheme(e);
-    "undefined" != typeof echarts && setEchartsTheme(e);
-    "undefined" != typeof vegaEmbed && setVegaLiteTheme(e);
-    document.documentElement.setAttribute("data-theme", e);
+    setHighlight(theme);
+    setGiscusTheme(theme);
+    setSearchTheme(theme);
 
-    let t = document.getElementsByTagName("table");
-    for (let i = 0; i < t.length; i++)
-        "dark" == e ? t[i].classList.add("table-dark") : t[i].classList.remove("table-dark");
+    if (typeof mermaid !== "undefined") setMermaidTheme(theme);
+    if (typeof Diff2HtmlUI !== "undefined") setDiff2htmlTheme(theme);
+    if (typeof echarts !== "undefined") setEchartsTheme(theme);
+    if (typeof vegaEmbed !== "undefined") setVegaLiteTheme(theme);
 
-    let i = document.getElementsByClassName("jupyter-notebook-iframe-container");
-    for (let t = 0; t < i.length; t++) {
-        let m = i[t].getElementsByTagName("iframe")[0].contentWindow.document.body;
-        "dark" == e ? (m.setAttribute("data-jp-theme-light", "false"), m.setAttribute("data-jp-theme-name", "JupyterLab Dark"))
-                    : (m.setAttribute("data-jp-theme-light", "true"), m.setAttribute("data-jp-theme-name", "JupyterLab Light"));
+    document.documentElement.setAttribute("data-theme", theme);
+
+    // Toggle dark mode styles for elements
+    document.querySelectorAll("table").forEach(table => {
+        if (theme === "dark") table.classList.add("table-dark");
+        else table.classList.remove("table-dark");
+    });
+
+    document.querySelectorAll(".jupyter-notebook-iframe-container iframe").forEach(iframe => {
+        let iframeBody = iframe.contentWindow.document.body;
+        iframeBody.setAttribute("data-jp-theme-light", theme === "dark" ? "false" : "true");
+        iframeBody.setAttribute("data-jp-theme-name", theme === "dark" ? "JupyterLab Dark" : "JupyterLab Light");
+    });
+
+    if (typeof medium_zoom !== "undefined") {
+        medium_zoom.update({ background: getComputedStyle(document.documentElement).getPropertyValue("--global-bg-color") + "ee" });
     }
 
-    "undefined" != typeof medium_zoom && medium_zoom.update({ background: getComputedStyle(document.documentElement).getPropertyValue("--global-bg-color") + "ee" });
+    // Add twinkling stars in dark mode
+    toggleTwinklingStars(theme);
+};
 
-    // 🌌 Add/Remove Stars when switching modes
-    if (e === "dark") {
-        addStars();
+// Function to toggle twinkling stars in dark mode
+let toggleTwinklingStars = (theme) => {
+    let starContainer = document.querySelector(".stars");
+
+    if (theme === "dark") {
+        if (!starContainer) {
+            starContainer = document.createElement("div");
+            starContainer.className = "stars";
+            document.body.appendChild(starContainer);
+
+            for (let i = 0; i < 100; i++) {
+                let star = document.createElement("div");
+                star.className = "star";
+                star.style.top = `${Math.random() * 100}vh`;
+                star.style.left = `${Math.random() * 100}vw`;
+                star.style.animationDelay = `${Math.random() * 2}s`;
+                starContainer.appendChild(star);
+            }
+        }
     } else {
-        removeStars();
+        if (starContainer) starContainer.remove();
     }
 };
 
-let addStars = () => {
-    if (document.querySelector('.stars')) return; // Prevent multiple layers
-
-    const starContainer = document.createElement("div");
-    starContainer.classList.add("stars");
-
-    for (let i = 0; i < 150; i++) { // Number of stars
-        let star = document.createElement("div");
-        star.classList.add("star");
-
-        star.style.top = `${Math.random() * 100}vh`;
-        star.style.left = `${Math.random() * 100}vw`;
-        star.style.animationDuration = `${Math.random() * 3 + 1}s`;
-        star.style.animationDelay = `${Math.random() * 5}s`;
-
-        starContainer.appendChild(star);
-    }
-
-    document.body.appendChild(starContainer);
-};
-
-let removeStars = () => {
-    const stars = document.querySelector('.stars');
-    if (stars) stars.remove();
-};
-
-let setHighlight = e => {
-    "dark" == e ? (document.getElementById("highlight_theme_light").media = "none", document.getElementById("highlight_theme_dark").media = "")
-                : (document.getElementById("highlight_theme_dark").media = "none", document.getElementById("highlight_theme_light").media = "");
-};
-
-let setGiscusTheme = e => {
-    function t(e) {
-        const t = document.querySelector("iframe.giscus-frame");
-        t && t.contentWindow.postMessage({ giscus: e }, "https://giscus.app");
-    }
-    t({ setConfig: { theme: e } });
-};
-
+// Function for smooth theme transitions
 let transTheme = () => {
     document.documentElement.classList.add("transition");
-    window.setTimeout(() => { document.documentElement.classList.remove("transition"); }, 500);
+    setTimeout(() => {
+        document.documentElement.classList.remove("transition");
+    }, 500);
 };
 
-let determineThemeSetting = () => {
-    let e = localStorage.getItem("theme");
-    return "dark" != e && "light" != e && "system" != e ? "system" : e;
-};
-
-let determineComputedTheme = () => {
-    let e = determineThemeSetting();
-    if ("system" == e) {
-        const e = window.matchMedia;
-        return e && e("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    }
-    return e;
-};
-
+// Function to initialize the theme
 let initTheme = () => {
-    let e = determineThemeSetting();
-    setThemeSetting(e);
+    let theme = localStorage.getItem("theme") || "dark"; // Default to dark mode
+    setThemeSetting(theme);
 
-    document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("light-toggle").addEventListener("click", function () {
-            toggleThemeSetting();
-        });
+    document.addEventListener("DOMContentLoaded", () => {
+        let themeToggle = document.getElementById("light-toggle");
+        if (themeToggle) {
+            themeToggle.addEventListener("click", toggleThemeSetting);
+        }
     });
-
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches: e }) => {
-        applyTheme();
-    });
-
-    // 🌌 Check if dark mode is enabled on page load
-    if (document.body.classList.contains("dark-mode")) {
-        addStars();
-    }
 };
+
+// Run theme initialization
+initTheme();
