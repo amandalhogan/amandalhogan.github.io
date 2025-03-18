@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,10 +24,11 @@
   <link defer rel="stylesheet" href="assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark">
   <script>
     initTheme();
+    
   </script>
 </head>
-
-<body class="fixed-top-nav">
+     <!---- ///////////////////////////////-->
+      <body class="fixed-top-nav">
   <header>
     <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
       <div class="container">
@@ -43,6 +45,10 @@
             <li class="nav-item"><a class="nav-link" href="#teaching">Teaching</a></li>
             <li class="nav-item"><a class="nav-link" href="#people">People</a></li>
             <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            
+            </li>
+            <li class="nav-item"> <button id="search-toggle" title="Search" onclick="openSearchModal()"> <span class="nav-link">ctrl k <i class="ti ti-search"></i></span> </button> </li>
+            <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li>
           </ul>
         </div>
       </div>
@@ -56,62 +62,111 @@
 
   <div class="container mt-5" role="main">
     <div class="post">
+      <!-- lalalalla--> 
 
-      <!-- About Section -->
-      <section id="about">
-        <header class="post-header">
-          <h1 class="post-title"><span class="font-weight-bold">Amanda</span> Hogan</h1>
-        </header>
-        <article>
-          <div class="profile float-right">
-            <figure>
-              <picture>
-                <source class="responsive-img-srcset" srcset="assets/img/prof_pic.jpg" type="image/webp" sizes="(min-width: 930px) 270.0px, (min-width: 576px) 30vw, 95vw">
-                <img src="assets/img/prof_pic.jpg" class="img-fluid z-depth-1 rounded" width="100%" height="auto" alt="prof_pic.jpg" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-              </picture>
-            </figure>
-            <div class="more-info">
-              <p>6350 Main Street</p>
-              <p>Houston, TX 77005</p>
-            </div>
+
+      
+      <header class="post-header">
+        <h1 class="post-title"> <span class="font-weight-bold">Amanda</span> Hogan </h1>
+      </header>
+      <article>
+        <div class="profile float-right">
+          <figure>
+            <picture>
+              <source class="responsive-img-srcset" srcset="assets/img/prof_pic.jpg" type="image/webp" sizes="(min-width: 930px) 270.0px, (min-width: 576px) 30vw, 95vw"> <img src="assets/img/prof_pic.jpg" class="img-fluid z-depth-1 rounded" width="100%" height="auto" alt="prof_pic.jpg" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </source>
+            </picture>
+          </figure>
+          <div class="more-info">
+            <p>6350 Main Street</p>
+            <p>Houston, TX 77005</p>
           </div>
-          <p>Welcome to my site! I'm Amanda, a scientist, space enthusiast, and avid gardener.</p>
-        </article>
-      </section>
-
-      <!-- Blog Section -->
-      <section id="blog">
-        <h2>Latest Posts</h2>
-        <p>Blog content goes here...</p>
-      </section>
-
-      <!-- Teaching Section -->
-      <section id="teaching">
-        <h2>Teaching</h2>
-        <p>Teaching content goes here...</p>
-      </section>
-
-      <!-- People Section -->
-      <section id="people">
-        <h2>People</h2>
-        <p>Information about collaborators, teams, etc.</p>
-      </section>
-
-      <!-- Projects Section -->
-      <section id="projects">
-        <h2>Projects</h2>
-        <p>Projects and research descriptions go here...</p>
-      </section>
-
-      <div class="social">
-        <div class="contact-icons">
-          <a href="mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D" title="email"><i class="fa-solid fa-envelope"></i></a>
         </div>
-        <div class="contact-note">Copyright 2025 Amanda L. Hogan. Powered by Jekyll with al-folio theme. Hosted by GitHub Pages.</div>
-      </div>
+        <div class="clearfix">
+          <p>Welcome to my site! I'm Amanda, a scientist, space enthusiast, and avid gardener. Please browse my site, there are many hidden features that you might come across as you explore!</a>
+          <p>Some quick facts:</p>
+          <ul class="fact-list">
+            <li><span><i class="fa-regular fa-star"></i> Graduated from Rice University in May 2024 with a B.S. in Biosciences (Cell Bio & Genetics) and a Minor in Data Science.</span></li>
+            <li><span><i class="fa-regular fa-star"></i> Currently pursuing a Professional Master's in Space Studies from Rice University, expected to graduate this May!</span></li>
+            <li><span><i class="fa-regular fa-star"></i> My favorite programming language is Python, but I have experience with Matlab, R, Javascript, and SQL as well!</span></li>
+            <li><span><i class="fa-regular fa-star"></i> I am from Los Angeles, California, but I am currently based in Houston, Texas.</span></li>
+          </ul>
+
+        </div>
+        <h2> <a href="news/" style="color: inherit">projects</a> </h2>
+        <div class="projects">
+          <div class="table-responsive">
+            <table class="table table-sm table-borderless">
+              <tr>
+                <th scope="row" style="width: 20%">Jan 15, 2016</th>
+                <td> A simple inline announcement with Markdown emoji! <img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png" height="20" width="20"> <img class="emoji" title=":smile:" alt=":smile:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png" height="20" width="20"> </td>
+              </tr>
+              <tr>
+                <th scope="row" style="width: 20%">Nov 07, 2015</th>
+                <td> <a class="news-title" href="news/announcement_2/">A long announcement with details</a> </td>
+              </tr>
+              <tr>
+                <th scope="row" style="width: 20%">Oct 22, 2015</th>
+                <td> A simple inline announcement. </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <h2> <a href="blog/" style="color: inherit">latest posts</a> </h2>
+        <div class="news">
+          <div class="table-responsive" style="max-height: 60vw">
+            <table class="table table-sm table-borderless">
+              <tr>
+                <th scope="row" style="width: 20%">Dec 04, 2024</th>
+                <td> <a class="news-title" href="blog/2024/photo-gallery/">a post with image galleries</a> </td>
+              </tr>
+              <tr>
+                <th scope="row" style="width: 20%">May 14, 2024</th>
+                <td> <a class="news-title" href="https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/" target="_blank" rel="external nofollow noopener">Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra</a> <svg width="2rem" height="2rem" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg> </td>
+              </tr>
+              <tr>
+                <th scope="row" style="width: 20%">May 01, 2024</th>
+                <td> <a class="news-title" href="blog/2024/tabs/">a post with tabs</a> </td>
+              </tr>
+
+          </div>
+          <div class="social">
+            <div class="contact-icons"> <a href="mailto:%79%6F%75@%65%78%61%6D%70%6C%65.%63%6F%6D" title="email"><i class="fa-solid fa-envelope"></i></a> <a href="https://inspirehep.net/authors/1010907" title="Inspire HEP" rel="external nofollow noopener" target="_blank"><i class="ai ai-inspire"></i></a>
+            </div>
+            <div class="contact-note"> Copyright 2025 Amanda L. Hogan Powered by Jekyll with al-folio theme. Hosted by GitHub Pages. </div>
+          </div>
+      </article>
     </div>
   </div>
-
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script defer src="assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script defer src="assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script>
+  <script src="assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script>
+  <script defer src="assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script>
+  <script defer src="assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script>
+  <script defer src="assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script>
+  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+  <script async src="https://badge.dimensions.ai/badge.js"></script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script>
+  <script src="assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script>
+  <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script>
+  <script defer src="assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script>
+  <script src="assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script>
+  <script>
+    addBackToTop();
+      
+  </script>
+  <script type="module" src="assets/js/search/ninja-keys.min.js?a3446f084dcaecc5f75aa1757d087dcf"></script>
+  <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys>
+  <script src="assets/js/search-setup.js?6c304f7b1992d4b60f7a07956e52f04a"></script>
+  <script src="assets/js/search-data.js"></script>
+  <script src="assets/js/shortcut-key.js?6f508d74becd347268a7f822bca7309d"></script>
   <script>
     // Smooth Scroll Effect
     document.querySelectorAll('a.nav-link').forEach(anchor => {
@@ -124,10 +179,6 @@
       });
     });
   </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js"></script>
 </body>
 
 </html>
