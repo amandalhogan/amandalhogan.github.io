@@ -248,8 +248,8 @@ d-article h1,d-article h2,d-article hr,d-article table,d-article table th,d-arti
 
 .fact-list {
     list-style: <i class="fa-regular fa-star"></i>; 
-    padding-left: 0; /* Align items properly */
-    margin-bottom: 20px; /* Adds space between list items */
+    padding-left: 10; /* Align items properly */
+    margin-bottom: 15px; /* Adds space between list items */
 }
 
 .fact-list li {
@@ -261,13 +261,12 @@ d-article h1,d-article h2,d-article hr,d-article table,d-article table th,d-arti
     padding-left: 30px; /* Creates space for hanging indent */
 }
 
-.fact-list li::before {
+/* .fact-list li::before {
     content:<i class="fa-regular fa-star"></i>; /* Adds star before each item */
-    position: absolute; /* Keeps the star in place */
-    font-size: 1.2em; /* Adjusts star size */
-    line-height: 1; /* Prevents misalignment */
-}
-
+/*    position: absolute; /* Keeps the star in place */
+/*    font-size: 1.2em; /* Adjusts star size */
+ /*   line-height: 1; /* Prevents misalignment */
+/*} */
 .fact-list li span {
     display: block; /* Allows text wrapping */
     
