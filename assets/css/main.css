@@ -249,10 +249,11 @@ d-article h1,d-article h2,d-article hr,d-article table,d-article table th,d-arti
 
 .fact-list {
     list-style: none; /* Removes default bullets */
-    padding-left: 0;  /* Aligns items properly */
+    padding-left: 4;  /* Aligns items properly */
+    padding-left: 4;
 }
 
 .fact-list li::before {
     content: <i class="fa-regular fa-star"></i>;  /* Adds star before each item */
-    margin-right: 8px; /* Spaces the star from text */
+    margin-right: 14px; /* Spaces the star from text */
 }
