@@ -277,18 +277,14 @@ d-article h1,d-article h2,d-article hr,d-article table,d-article table th,d-arti
 }
 
 
-/* twinkle star background!!!!!!! *//* 🌌 Twinkling stars effect for dark mode */
-body.dark-mode {
-  background: black;
-  overflow: hidden;
-}
-
+/* twinkle star background!!!!!!! */
 .stars {
-  width: 100%;
-  height: 100%;
   position: fixed;
   top: 0;
   left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   pointer-events: none;
   z-index: -1;
 }
@@ -297,17 +293,14 @@ body.dark-mode {
   position: absolute;
   width: 2px;
   height: 2px;
-  background: white;
-  opacity: 0;
+  background-color: white;
   border-radius: 50%;
-  animation: twinkle 2s infinite ease-in-out alternate;
+  opacity: 0;
+  animation: twinkle 2s infinite ease-in-out;
 }
 
 @keyframes twinkle {
-  0% {
-    opacity: 0.1;
-  }
-  100% {
-    opacity: 1;
-  }
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
 }
