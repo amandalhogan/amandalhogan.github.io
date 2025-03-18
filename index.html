@@ -42,16 +42,17 @@
             <li class="nav-item active"><a class="nav-link" href="#about">About</a></li>
             <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
             <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-            <li class="nav-item"><a class="nav-link" href="#get in touch">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 
             </li>
             <!-- search bar -->
             <li class="nav-item"> <button id="search-toggle" title="Search" onclick="openSearchModal()"> <span class="nav-link">have a look <i class="ti ti-search"></i></span> </button> </li>
             <!-- light/dark toggle -->
             <button id="light-toggle" title="Toggle Star Mode">
-              <i class="ti ti-moon-filled" id="toggle-dark"></i>
-              <i class="ti ti-sun-filled" id="toggle-light"></i>
+                <i class="ti ti-moon-filled" id="toggle-dark" style="display: none;"></i>
+                <i class="ti ti-sun-filled" id="toggle-light"></i>
             </button>
+
           </ul>
         </div>
       </div>
@@ -66,7 +67,9 @@
   <div class="container mt-5" role="main">
     <div class="post">
 
-
+        <section id="about">
+          <h2> <a href="#about" style="color: inherit"></a> </h2>
+          
       <header class="post-header">
         <h1 class="post-title"> <span class="font-weight-bold">Amanda</span> L. Hogan </h1>
       </header>
@@ -79,16 +82,18 @@
           </figure>
         </div>
         <div class="clearfix">
-          <p>Welcome! I'm Amanda, a scientist, space enthusiast, and avid gardener. <i class="fa-regular fa-seedling"></i></a>
+          <p>Welcome! I'm Amanda, a scientist, space enthusiast, and avid gardener.</a>
           <p>Some quick facts:</p>
           <ul class="fact-list">
-            <li><span><i class="fa-regular fa-star"></i> Graduated from Rice University in May 2024 with a B.S. in Biosciences (Cell Bio & Genetics) and a Minor in Data Science.</span></li>
-            <li><span><i class="fa-regular fa-star"></i> Currently pursuing a Professional Master's in Space Studies from Rice University, expected to graduate this May!</span></li>
-            <li><span><i class="fa-regular fa-star"></i> My favorite programming language is Python, but I have experience with Matlab, R, Javascript, and SQL as well!</span></li>
-            <li><span><i class="fa-regular fa-star"></i> I am from Los Angeles, California, but I am currently based in Houston, Texas.</span></li>
+            <li><i class="fa-regular fa-star"></i> Graduated from Rice University in May 2024 with a B.S. in Biosciences (Cell Bio & Genetics) and a Minor in Data Science.</li>
+            <li><i class="fa-regular fa-star"></i> Currently pursuing a Professional Master's in Space Studies from Rice University, expected to graduate this May!</li>
+            <li><i class="fa-regular fa-star"></i> My favorite programming language is Python, but I have experience with Matlab, R, Javascript, and SQL as well!</li>
+            <li><i class="fa-regular fa-star"></i> I am from Los Angeles, California, but I am currently based in Houston, Texas.</li>
           </ul>
 
         </div>
+            </section>
+
         <section id="projects">
           <h2> <a href="#projects" style="color: inherit">projects</a> </h2>
 
@@ -144,7 +149,7 @@
     </div>
     </section>
     
-    <section id="#skills">
+    <section id="skills">
       <h2> <a href="#skills" style="color: inherit">skills</a> </h2>
         <div class="table-responsive" style="max-height: 60vw">
           <table class="table table-sm table-borderless">
@@ -157,7 +162,7 @@
         </div>
     </section>
     
-    <section id="#contact">
+    <section id="contact">
       <h2> <a href="#contact" style="color: inherit">get in touch</a> </h2>
       <div> Send me an email, or message me on LinkedIn! <i class="fa-light fa-face-laugh-beam"></i></div>
       <div class="contact-icons"> 
