@@ -264,7 +264,7 @@ d-article h1,d-article h2,d-article hr,d-article table,d-article table th,d-arti
 .fact-list li::before {
     content:<i class="fa-regular fa-star"></i>; /* Adds star before each item */
     position: absolute; /* Keeps the star in place */
-    left: 8; /* Aligns the star to the left */
+    left: 0; /* Aligns the star to the left */
     top: 6px; /* Adjusts vertical alignment */
     font-size: 1.2em; /* Adjusts star size */
     line-height: 1; /* Prevents misalignment */
@@ -277,7 +277,7 @@ d-article h1,d-article h2,d-article hr,d-article table,d-article table th,d-arti
 }
 
 
-/* twinkle star background!!!!!!! */
+/* twinkle star background!!!!!!! *//* 🌌 Twinkling stars effect for dark mode */
 body.dark-mode {
   background: black;
   overflow: hidden;
