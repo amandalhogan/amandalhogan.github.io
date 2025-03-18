@@ -247,7 +247,7 @@ d-article h1,d-article h2,d-article hr,d-article table,d-article table th,d-arti
 .ti-hand-rock:before{content:"\ee97"}.ti-sort-deacending-small-big:before{content:"\fd96"}.ti-shi-jumping:before{content:"\fa6c"}.ti-box-seam:before{content:"\eaff"}.ti-kering:before{content:"\efb8"}.ti-2fa:before{content:"\eca0"}.ti-3d-cube-sphere:before{content:"\ecd7"}.ti-3d-cube-sphere-off:before{content:"\f3b5"}.ti-3d-rotate:before{content:"\f020"}.ti-12-hours:before{content:"\fc53"}.ti-24-hours:before{content:"\f5e7"}.ti-360-view:before{content:"\f566"}.ti-circle-0:before{content:"\ee34"}.ti-circle-1:before{content:"\ee35"}.ti-circle-2:before{content:"\ee36"}.ti-circle-3:before{content:"\ee37"}.ti-circle-4:before{content:"\ee38"}.ti-circle-5:before{content:"\ee39"}.ti-circle-6:before{content:"\ee3a"}.ti-circle-7:before{content:"\ee3b"}.ti-circle-8:before{content:"\ee3c"}.ti-circle-9:before{content:"\ee3d"}.ti-hexagon-0:before{content:"\f459"}.ti-hexagon-1:before{content:"\f45a"}.ti-hexagon-2:before{content:"\f45b"}.ti-hexagon-3:before{content:"\f45c"}.ti-hexagon-4:before{content:"\f45d"}.ti-hexagon-5:before{content:"\f45e"}.ti-hexagon-6:before{content:"\f45f"}.ti-hexagon-7:before{content:"\f460"}.ti-hexagon-8:before{content:"\f461"}.ti-hexagon-9:before{content:"\f462"}.ti-square-0:before{content:"\eee5"}.ti-square-1:before{content:"\eee6"}.ti-square-2:before{content:"\eee7"}.ti-square-3:before{content:"\eee8"}.ti-square-4:before{content:"\eee9"}.ti-square-5:before{content:"\eeea"}.ti-square-6:before{content:"\eeeb"}.ti-square-7:before{content:"\eeec"}.ti-square-8:before{content:"\eeed"}.ti-square-9:before{content:"\eeee"}.ti-message-circle-2:before{content:"\eaed"}.ti-mood-suprised:before{content:"\ec04"}.ti-circle-dashed-letter-letter-v:before{content:"\ff84"}
 
 .fact-list {
-    list-style: none; /* Remove default bullets */
+    list-style: <i class="fa-regular fa-star"></i>; /* Remove default bullets */
     padding-left: 0; /* Align items properly */
     margin-bottom: 20px; /* Adds space between list items */
 }
@@ -255,8 +255,8 @@ d-article h1,d-article h2,d-article hr,d-article table,d-article table th,d-arti
 .fact-list li {
     display: flex; /* Aligns star and text in one row */
     align-items: flex-start; /* Ensures the star stays at the top */
-    padding: 8px 0; /* Adds spacing between list items */
-    line-height: 1.2; /* Increases space between lines */
+    padding: 10px 0; /* Adds spacing between list items */
+    line-height: 1.4; /* Increases space between lines */
     position: relative; /* Needed for text indentation */
     padding-left: 30px; /* Creates space for hanging indent */
 }
@@ -273,7 +273,7 @@ d-article h1,d-article h2,d-article hr,d-article table,d-article table th,d-arti
 .fact-list li span {
     display: block; /* Allows text wrapping */
     
-    padding-left: 20px; /* Ensures second line is aligned with first line text */
+    padding-left: 10px; /* Ensures second line is aligned with first line text */
 }
 
 
