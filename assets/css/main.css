@@ -256,7 +256,7 @@ d-article h1,d-article h2,d-article hr,d-article table,d-article table th,d-arti
     display: flex; /* Aligns star and text in one row */
     align-items: flex-start; /* Ensures the star stays at the top */
     padding: 8px 0; /* Adds spacing between list items */
-    line-height: 1.8; /* Increases space between lines */
+    line-height: 1.2; /* Increases space between lines */
     position: relative; /* Needed for text indentation */
     padding-left: 30px; /* Creates space for hanging indent */
 }
@@ -264,7 +264,7 @@ d-article h1,d-article h2,d-article hr,d-article table,d-article table th,d-arti
 .fact-list li::before {
     content:<i class="fa-regular fa-star"></i>; /* Adds star before each item */
     position: absolute; /* Keeps the star in place */
-    left: 0; /* Aligns the star to the left */
+    left: 10; /* Aligns the star to the left */
     top: 6px; /* Adjusts vertical alignment */
     font-size: 1.2em; /* Adjusts star size */
     line-height: 1; /* Prevents misalignment */
@@ -272,6 +272,6 @@ d-article h1,d-article h2,d-article hr,d-article table,d-article table th,d-arti
 
 .fact-list li span {
     display: block; /* Allows text wrapping */
-    text-indent: -30px; /* Moves the first line back to align with the star */
-    padding-left: 0px; /* Ensures second line is aligned with first line text */
+    
+    padding-left: 30px; /* Ensures second line is aligned with first line text */
 }
