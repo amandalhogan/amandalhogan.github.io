@@ -291,3 +291,22 @@ d-article h1,d-article h2,d-article hr,d-article table,d-article table th,d-arti
     50% { opacity: 1; transform: scale(1.3); }
     100% { opacity: 0.2; transform: scale(1); }
 }
+
+
+
+/* CV BUTTON */
+.cv-button {
+    display: inline-block;
+    font-size: 14px; 
+    padding: 4px 10px; /* Adjust padding */
+    background-color: #6c757d; /* Grey */
+    color: white; /* White text */
+    border-radius: 12px; /* Rounded */
+    text-decoration: none; /* Remove underline */
+    margin-left: 10px; /* Space to the right of "CV" */
+    transition: background 0.3s ease-in-out;
+}
+
+.cv-button:hover {
+    background-color: #5a6268; /* Slightly darker grey on hover */
+}
